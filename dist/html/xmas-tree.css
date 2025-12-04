@@ -1,0 +1,88 @@
+/* Xmas Tree shared CSS (XmasTree.css / xmas-tree.css) */
+
+.tree-container {
+  position: fixed;
+  left: 20px;
+  bottom: -10px;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  z-index: 999;
+}
+.tree {
+  position: relative;
+  height: 40vmin;
+  width: 20vmin;
+  transform-style: preserve-3d;
+  will-change: transform;
+  -webkit-animation: spin3d 2s infinite linear;
+  animation: spin3d 2s infinite linear;
+}
+
+.tree__light {
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: absolute;
+  height: 1vmin;
+  width: 1vmin;
+  border-radius: 50%;
+  -webkit-animation:
+    flash calc(var(--speed) * 1s) calc(var(--delay) * 1s) infinite steps(4),
+    appear 0.5s calc(var(--appear) * 0.05s) both;
+  animation:
+    flash calc(var(--speed) * 1s) calc(var(--delay) * 1s) infinite steps(4),
+    appear 0.5s calc(var(--appear) * 0.05s) both;
+  left: 50%;
+  transform: translate(-50%, 50%) rotateY(calc(var(--rotate, 0) * 1deg))
+    translate3d(0, 0, calc(var(--radius, 0) * 1vmin));
+  bottom: calc(var(--y, 0) * 1%);
+}
+
+.tree__star {
+  stroke-width: 5vmin;
+  stroke: #f5e0a3;
+  filter: drop-shadow(0 0 2vmin #fcf1cf);
+  height: 5vmin;
+  width: 5vmin;
+  overflow: visible !important;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  stroke-dasharray: 1000 1000;
+  fill: none;
+  -webkit-animation: stroke 1s calc((var(--delay) * 0.95) * 0.05s) both;
+  animation: stroke 1s calc((var(--delay) * 0.95) * 0.05s) both;
+}
+@keyframes stroke {
+  from {
+    stroke-dashoffset: -1000;
+  }
+}
+@keyframes spin3d {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  0%,
+  100% {
+    background: #f00;
+  }
+  20% {
+    background: #fff;
+  }
+  40% {
+    background: #f00;
+  }
+  60% {
+    background: #fff;
+  }
+  80% {
+    background: #f00;
+  }
+}

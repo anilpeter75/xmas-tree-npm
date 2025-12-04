@@ -1,0 +1,28 @@
+{
+  "name": "react-xmas-tree",
+  "version": "1.0.4",
+  "description": "Universal lightweight Xmas tree component - React + HTML + Vanilla JS",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./react": "./dist/react/XmasTree.jsx",
+    "./core": "./dist/core/xmasTree.js",
+    "./html": "./dist/html/index.html"
+  },
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "keywords": [
+    "xmas",
+    "christmas",
+    "tree",
+    "react",
+    "html",
+    "vanilla",
+    "js",
+    "animation"
+  ],
+  "license": "MIT"
+}
