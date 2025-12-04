@@ -121,34 +121,118 @@ react-xmas-tree/
 
 ## 🔧 Customization
 
-You can easily customize the tree's appearance and position using CSS.
+You can easily customize the tree's appearance and position using CSS or props.
 
 ### Position
 Override the default bottom-left position:
 
-Override position:
-
+#### Using CSS:
 ```css
 .tree-container {
   left: 30px !important;
   bottom: 10px !important;
   right: auto !important;
-  bottom: auto !important;
-  ...add other styles also
+  top: auto !important;
 }
 ```
 
+#### Using Props:
+```jsx
+import XmasTree from "react-xmas-tree/react";
+
+export default function App() {
+  return (
+    <XmasTree 
+      position={{ 
+        left: "30px", 
+        bottom: "10px",
+        position: "fixed"
+      }} 
+    />
+  );
 }
 ```
 
 ### Colors
-Override the star color:
 
+#### Star Color
+```jsx
+<XmasTree starColor="#ff0000" /> {/* Red star */}
+```
+
+#### Light Colors
+```jsx
+<XmasTree 
+  lightColors={[
+    "#ff0000", // Red
+    "#00ff00", // Green
+    "#0000ff", // Blue
+    "#ffff00", // Yellow
+    "#ff00ff"  // Magenta
+  ]} 
+/>
+```
+
+### CSS Classes
+Add custom CSS classes for advanced styling:
+
+```jsx
+<XmasTree 
+  containerClass="my-container-class"
+  treeClass="my-tree-class"
+  lightClass="my-light-class"
+  starClass="my-star-class"
+/>
+```
+
+### Custom Light Styles
+Apply custom styles to all lights:
+
+```jsx
+<XmasTree 
+  customLightStyles={{
+    width: "2vmin",
+    height: "2vmin",
+    borderRadius: "20%"
+  }}
+/>
+```
+
+### Complete Example
+```jsx
+import XmasTree from "react-xmas-tree/react";
+
+export default function App() {
+  return (
+    <XmasTree 
+      position={{ 
+        right: "20px", 
+        bottom: "20px",
+        position: "fixed"
+      }}
+      starColor="#ff0000"
+      lightColors={[
+        "#ff0000", "#00ff00", "#0000ff", 
+        "#ffff00", "#ff00ff", "#00ffff"
+      ]}
+      containerClass="custom-container"
+      customLightStyles={{
+        width: "1.5vmin",
+        height: "1.5vmin"
+      }}
+    />
+  );
+}
+```
+
+Then add custom CSS:
 ```css
-.tree__star {
-  stroke: yellow !important;
-    ...add other styles also
+.custom-container {
+  z-index: 1000;
+}
 
+.custom-container .tree__light {
+  box-shadow: 0 0 5px currentColor;
 }
 ```
 

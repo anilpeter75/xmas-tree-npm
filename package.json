@@ -1,18 +1,30 @@
 {
   "name": "react-xmas-tree",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Universal lightweight Xmas tree component - React + HTML + Vanilla JS",
   "type": "module",
   "files": [
     "dist"
   ],
   "exports": {
-    "./react": "./dist/react/XmasTree.jsx",
+    "./react": "./dist/react/XmasTree.js",
     "./core": "./dist/core/xmasTree.js",
     "./html": "./dist/html/index.html"
   },
+  "main": "./dist/react/XmasTree.js",
+  "module": "./dist/react/XmasTree.js",
+  "types": "./dist/react/XmasTree.d.ts",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "prepublishOnly": "npm run build"
+  },
   "peerDependencies": {
     "react": ">=17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
+    "fs-extra": "^11.3.2"
   },
   "keywords": [
     "xmas",

@@ -54,32 +54,60 @@ const lights = [
   { appear: 49, y: 98, rotate: 28.8, radius: 0.25, speed: 2.95957301675398, delay: -2.0371556584842487 }
 ];
 
+function XmasTree({
+  position = {},
+  lightColors = [],
+  starColor = "#f5e0a3",
+  containerClass = "",
+  treeClass = "",
+  lightClass = "",
+  starClass = "",
+  customLightStyles = {}
+}) {
+  // Merge default position with custom position
+  const containerStyle = {
+    ...position,
+    perspective: "1200px",
+    transformStyle: "preserve-3d"
+  };
 
+  // Apply custom star color
+  const starStyle = {
+    "--delay": 50,
+    stroke: starColor
+  };
 
-function XmasTree() {
   return (
-    <div className="tree-container">
-      <div className="tree" style={{ transformStyle: "preserve-3d" }}>
-        {lights.map((light, index) => (
-          <div
-            key={index}
-            className="tree__light"
-            style={{
-              "--appear": light.appear,
-              "--y": light.y,
-              "--rotate": light.rotate,
-              "--radius": light.radius,
-              "--speed": light.speed,
-              "--delay": light.delay
-            }}
-          />
-        ))}
+    <div className={`tree-container ${containerClass}`} style={containerStyle}>
+      <div className={`tree ${treeClass}`} style={{ transformStyle: "preserve-3d" }}>
+        {lights.map((light, index) => {
+          // Apply custom light colors if provided
+          const lightColor = lightColors[index % lightColors.length] || "";
+          const lightStyle = {
+            "--appear": light.appear,
+            "--y": light.y,
+            "--rotate": light.rotate,
+            "--radius": light.radius,
+            "--speed": light.speed,
+            "--delay": light.delay,
+            ...customLightStyles,
+            ...(lightColor ? { backgroundColor: lightColor } : {})
+          };
+
+          return (
+            <div
+              key={index}
+              className={`tree__light ${lightClass}`}
+              style={lightStyle}
+            />
+          );
+        })}
 
         <svg
-          className="tree__star"
+          className={`tree__star ${starClass}`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 113.32 108.44"
-          style={{ "--delay": 50 }}
+          style={starStyle}
         >
           <path
             d="M90.19 104.33L57.12 87.38 24.4 105l5.91-36.69L3.44 42.65l36.72-5.72 16.1-33.5L73.06 36.6l36.83 4.97-26.35 26.21z"
