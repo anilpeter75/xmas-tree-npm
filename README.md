@@ -1,7 +1,6 @@
 # 🎄 react-xmas-tree
 
 ### A beautiful 3D animated Christmas Tree for **React**, with support for **HTML** and **Vanilla JavaScript** via the core mount function.
-![demo](https://github.com/user-attachments/assets/7740475c-def1-4ac9-89cc-c8da234fac31)
 
 ![npm](https://img.shields.io/npm/v/react-xmas-tree.svg)
 ![downloads](https://img.shields.io/npm/dm/react-xmas-tree.svg)
@@ -11,6 +10,7 @@ Add a festive rotating Xmas tree with glowing lights and animated star to any we
 
 ## 🌐 Live Demo
 https://react-xmas-tree.vercel.app/
+![Christmas Tree Animation](https://github.com/user-attachments/assets/7740475c-def1-4ac9-89cc-c8da234fac31)
 
 ---
 
