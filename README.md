@@ -10,7 +10,6 @@ Add a festive rotating Xmas tree with glowing lights and animated star to any we
 
 ## 🌐 Live Demo
 https://react-xmas-tree.vercel.app/
-![Christmas Tree Animation](https://github.com/user-attachments/assets/7740475c-def1-4ac9-89cc-c8da234fac31)
 
 ---
 
@@ -258,3 +257,6 @@ MIT © 2025
 **Anil Peter**  
 🔗 Portfolio: https://anilpeter.vercel.app/  
 🔗 GitHub: https://github.com/anilpeter75
+
+![Christmas Tree Animation](https://github.com/user-attachments/assets/7740475c-def1-4ac9-89cc-c8da234fac31)
+
