@@ -258,5 +258,12 @@ MIT © 2025
 🔗 Portfolio: https://anilpeter.vercel.app/  
 🔗 GitHub: https://github.com/anilpeter75
 
+## More Tools
+
+If you work with JSON often, check out:  
+https://formatjsononline.com
+
+
+
 ![Christmas Tree Animation](https://github.com/user-attachments/assets/7740475c-def1-4ac9-89cc-c8da234fac31)
 
